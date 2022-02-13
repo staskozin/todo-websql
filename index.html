@@ -3,25 +3,19 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="style.css">
   <title>WebSQL test app</title>
 </head>
 
 <body>
+  <h1>Список задач</h1>
   <form id="task-form">
-    <label>
-      <input type="text" name="task" id="task-input" autocomplete="off">
-    </label>
-    <button type="submit">Добавить</button>
+    <input type="text" name="task" id="task-input" autocomplete="off">
+    <button class="button" type="submit"><img src="img/plus.svg" alt=""></button>
   </form>
-  <div id="tasks">
-    <div class="task">
-      <input type="checkbox">
-      <span>Текст задачи</span>
-      <button>Удалить</button>
-    </div>
-  </div>
+  <div id="tasks"></div>
   <script src="DB.js"></script>
   <script src="Tasks.js"></script>
   <script src="script.js"></script>

@@ -4,6 +4,8 @@ window.onload = async () => {
 
   tasks = new Tasks('tasks')
   await tasks.update()
+
+  document.getElementById('task-input').focus()
 }
 
 document.getElementById('task-form').addEventListener('submit', async (e) => {

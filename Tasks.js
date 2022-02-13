@@ -36,12 +36,18 @@ class Tasks {
   }
 
   render() {
-    this.container.innerHTML = ''
-    this.tasks.forEach((task) => {
-      const taskElem = document.createElement('p')
-      taskElem.innerText = `${task.task_text} — ${task.is_completed}`
-      taskElem.setAttribute('onclick', `tasks.remove(${task.task_id})`)
-      this.container.appendChild(taskElem)
-    })
+    if (this.tasks.length === 0) {
+      this.container.innerHTML = 'Список дел пуст'
+    } else {
+      this.container.innerHTML = ''
+      this.tasks.forEach((task) => {
+        const taskElem = document.createElement('div')
+        taskElem.classList.add('task')
+        const label = `<label><input type="checkbox" onchange="tasks.toggleIsCompleted(${task.task_id})" ${task.is_completed ? 'checked' : ''}><span>${task.task_text}</span></label>`
+        const buttons = `<div class="buttons"><button class="button"><img src="img/trash.svg" alt="" onclick=tasks.remove(${task.task_id})></button></div>`
+        taskElem.innerHTML = label + buttons
+        this.container.appendChild(taskElem)
+      })
+    }
   }
 }
