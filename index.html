@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <title>WebSQL test app</title>
+</head>
+
+<body>
+  <form id="task-form">
+    <label>
+      <input type="text" name="task" id="task-input" autocomplete="off">
+    </label>
+    <button type="submit">Добавить</button>
+  </form>
+  <div id="tasks">
+    <div class="task">
+      <input type="checkbox">
+      <span>Текст задачи</span>
+      <button>Удалить</button>
+    </div>
+  </div>
+  <script src="DB.js"></script>
+  <script src="Tasks.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
