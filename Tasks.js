@@ -20,7 +20,6 @@ class Tasks {
     } else {
       await db.query('UPDATE task SET task_text = ?, is_completed = ? WHERE task_id = ?', [text, Number(is_completed), id])
     }
-    this.update()
   }
 
   async remove(id) {
@@ -35,6 +34,12 @@ class Tasks {
     this.render()
   }
 
+  handleTextChange(id, element) {
+    element.style.height = "24px";
+    element.style.height = (element.scrollHeight) + "px";
+    this.edit(id, element.value)
+  }
+
   render() {
     if (this.tasks.length === 0) {
       this.container.innerHTML = 'Список дел пуст'
@@ -43,7 +48,7 @@ class Tasks {
       this.tasks.forEach((task) => {
         const taskElem = document.createElement('div')
         taskElem.classList.add('task')
-        const label = `<label><input type="checkbox" onchange="tasks.toggleIsCompleted(${task.task_id})" ${task.is_completed ? 'checked' : ''}><span>${task.task_text}</span></label>`
+        const label = `<label><input type="checkbox" onchange="tasks.toggleIsCompleted(${task.task_id})" ${task.is_completed ? 'checked' : ''}><textarea spellcheck="false" oninput="tasks.handleTextChange(${task.task_id}, this)">${task.task_text}</textarea></label>`
         const buttons = `<div class="buttons"><button class="button"><img src="img/trash.svg" alt="" onclick=tasks.remove(${task.task_id})></button></div>`
         taskElem.innerHTML = label + buttons
         this.container.appendChild(taskElem)

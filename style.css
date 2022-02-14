@@ -80,13 +80,27 @@ h1 {
   background-image: url(img/check-square.svg);
 }
 
-.task input[type=checkbox]:checked+span {
+.task input[type=checkbox]:checked+textarea {
   text-decoration: line-through;
 }
 
-.task label span {
-  margin-left: 10px;
+.task label textarea {
+  box-sizing: border-box;
+  resize: none;
+  overflow: hidden;
+  width: 680px;
+  height: 24px;
+  min-height: 24px;
+  margin-left: 5px;
+  padding: 0 5px;
+  border: none;
   line-height: 24px;
+}
+
+.task label textarea:focus {
+  text-decoration: none !important;
+  outline: 1px solid #aaa;
+  border-radius: 5px;
 }
 
 .task .buttons {
