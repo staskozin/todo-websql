@@ -6,6 +6,10 @@ window.onload = async () => {
   tasks = new Tasks('tasks')
   await tasks.update()
 
+  for (const textarea of document.getElementsByTagName('textarea')) {
+    tasks.resizeTextarea(textarea)
+  }
+
   document.getElementById('task-input').focus()
 }
 

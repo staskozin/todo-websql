@@ -34,9 +34,13 @@ class Tasks {
     this.render()
   }
 
-  handleTextChange(id, element) {
+  resizeTextarea(element) {
     element.style.height = "24px";
     element.style.height = (element.scrollHeight) + "px";
+  }
+
+  handleTextChange(id, element) {
+    this.resizeTextarea(element)
     this.edit(id, element.value)
   }
 
