@@ -58,5 +58,8 @@ class Tasks {
         this.container.appendChild(taskElem)
       })
     }
+    for (const textarea of document.getElementsByTagName('textarea')) {
+      tasks.resizeTextarea(textarea)
+    }
   }
 }
