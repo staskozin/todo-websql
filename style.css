@@ -18,6 +18,21 @@ body {
   padding-top: 20px;
 }
 
+a {
+  color: rgb(26, 127, 182);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(26, 127, 182, 0.3);
+  transition-property: color, background-color;
+  transition-timing-function: ease-out;
+  transition-duration: 0.33s;
+}
+
+a:hover {
+  color: rgb(90, 149, 60);
+  border-bottom-color: rgb(90, 149, 60);
+  transition: none;
+}
+
 h1 {
   font-size: 48px;
   margin: 0 0 20px;
@@ -50,6 +65,10 @@ h1 {
   cursor: pointer;
   background: none;
   border: none;
+}
+
+#tasks {
+  margin-bottom: 40px;
 }
 
 .task {
@@ -109,4 +128,11 @@ h1 {
 
 .task .button {
   margin-left: 15px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 40px;
 }
