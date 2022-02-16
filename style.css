@@ -52,6 +52,8 @@ h1 {
   border-radius: 10px;
   padding: 11px 10px;
   outline: none;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 #task-form .button {
@@ -84,6 +86,8 @@ h1 {
 
 .task input[type="checkbox"] {
   appearance: none;
+  -webkit-appearance: none;
+  border: none;
   min-width: 24px;
   width: 24px;
   height: 24px;
@@ -93,6 +97,7 @@ h1 {
 
 .task input[type="checkbox"]:checked {
   background-image: url(img/check-square.svg);
+  background-color: transparent;
 }
 
 .task input[type="checkbox"]:checked + textarea {
@@ -140,6 +145,11 @@ footer {
 
   h1 {
     font-size: 44px;
+  }
+
+  .task textarea {
+    padding-left: 3px;
+    margin-left: 3px;
   }
 
   footer {
