@@ -9,6 +9,12 @@ window.onload = async () => {
   document.getElementById('task-input').focus()
 }
 
+window.onresize = () => {
+  for (const textarea of document.getElementsByTagName('textarea')) {
+    tasks.resizeTextarea(textarea)
+  }
+}
+
 document.getElementById('task-form').addEventListener('submit', async (e) => {
   e.preventDefault()
   const input = document.getElementById('task-input')
