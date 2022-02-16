@@ -115,11 +115,14 @@ h1 {
   padding: 0 5px;
   border: none;
   line-height: 24px;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 .task textarea:focus {
   text-decoration: none !important;
-  outline: 1px solid #aaa;
+  box-shadow: 0 0 0 1px #aaa;
+  outline: none;
   border-radius: 5px;
 }
 
