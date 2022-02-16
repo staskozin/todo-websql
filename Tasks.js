@@ -40,6 +40,8 @@ class Tasks {
   }
 
   handleTextChange(id, element) {
+    const task = this.tasks.find(t => t.task_id === id)
+    task.task_text = element.value
     this.resizeTextarea(element)
     this.edit(id, element.value)
   }
