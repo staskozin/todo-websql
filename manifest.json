@@ -1,0 +1,13 @@
+{
+  "start_url": "./",
+  "name": "Список задач",
+  "short_name": "ToDo",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "./favicon.svg",
+      "sizes": "144x144",
+      "type": "image/svg+xml"
+    }
+  ]
+}

@@ -23,3 +23,12 @@ document.getElementById('task-form').addEventListener('submit', async (e) => {
     input.value = ''
   }
 })
+
+if ("serviceWorker" in navigator) {
+  self.addEventListener("load", async () => {
+    const container = navigator.serviceWorker
+    if (container.controller === null) {
+      const reg = await container.register("sw.js")
+    }
+  })
+}
